@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Job Hunt - JobPortal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Front-End/seeker.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3 id="userName">Seeker name</h3>
+          <p>Job Seeker</p>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="dashboard-link"
+                ><i class="fas fa-home"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#jobs" class="jobs-link"
+                ><i class="fas fa-search"></i> Find Jobs</a
+              >
+            </li>
+            <li>
+              <a href="#applications" class="applications-link"
+                ><i class="fas fa-file-alt"></i> My Applications</a
+              >
+            </li>
+            <li class="active">
+              <a href="#profile" class="profile-link"
+                ><i class="fas fa-user"></i> Profile</a
+              >
+            </li>
+            <li>
+              <a href="login.html" id="logout"
+                ><i class="fas fa-sign-out-alt"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <!-- Content from original seeker dashboard -->
+        <header class="dashboard-header">
+          <h1>My Profile</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search jobs..." />
+            <button><i class=""></i></button>
+          </div>
+        </header>
+
+        <section id="profile" class="dashboard-section profile-section active">
+          <h2><i class=""></i> My Info</h2>
+          <form class="profile-form">
+            <div class="form-group">
+              <label for="fullName">Name</label>
+              <input type="text" id="fullName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" value="" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" class="form-control" value="" />
+            </div>
+
+            <div class="form-group">
+              <label for="location">Where I Live</label>
+              <input type="text" id="location" class="form-control" value="" />
+            </div>
+
+            <div class="form-group full-width">
+              <label>Stuff I Know</label>
+              <div class="skills-input">
+                <div class="add-skill">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Add something I know"
+                  />
+                  <button type="button"><i class=""></i></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <button type="submit" class="btn btn-primary">
+                <i class=""></i> Save My Stuff
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section id="jobs" class="dashboard-section jobs-section">
+          <h2><i class="fas fa-search"></i> Find Jobs</h2>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="jobSearch"
+              placeholder="Search jobs (title, company, keywords)..."
+            />
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+          </div>
+
+          <!-- Filters Row -->
+          <div class="filters-row">
+            <select id="filterJobType">
+              <option value="">All Job Types</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="remote">Remote</option>
+            </select>
+
+            <select id="filterLocation">
+              <option value="">All Locations</option>
+              <option value="New York">New York</option>
+              <option value="San Francisco">San Francisco</option>
+              <option value="Remote">Remote</option>
+            </select>
+
+            <select id="filterSalary">
+              <option value="">Any Salary</option>
+              <option value="50000">$50k+</option>
+              <option value="100000">$100k+</option>
+            </select>
+          </div>
+
+          <!-- Job Listings Container -->
+          <div class="job-listings" id="jobListingsContainer">
+            <!-- Jobs will be dynamically loaded here -->
+          </div>
+        </section>
+
+        <section
+          id="applications"
+          class="dashboard-section applications-section"
+        >
+          <h2><i class=""></i> Jobs I Applied To</h2>
+          <div class="job-listings">
+            <!-- Applications will be dynamically loaded here -->
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/Front-End/auth.js"></script>
+    <script src="/Front-End/jobs.js"></script>
+    <script src="/Front-End/applications.js"></script>
+    <script src="/Front-End/notifications.js"></script>
+    <script src="/Front-End/shared.js"></script>
+  </body>
+</html>
